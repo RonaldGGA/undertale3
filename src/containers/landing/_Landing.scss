@@ -1,0 +1,91 @@
+@import "../../components/NewFeaturesBar/NewFeaturesBar";
+@import "../../components/NavBar/NavBar.scss";
+
+.app__landing{
+  font-family: $primary-font;
+  min-height:850px;
+  &-flex{
+    @include flex-center;
+    max-height:500px;
+
+    @media screen and (max-width:900px) {
+       @include flex-center(column-reverse);
+        max-height:100%;
+      
+    }
+  }
+  &_img{
+    @include flex-center;
+    &--img{
+      width:100%;
+
+      @media screen and (max-width:900px) {
+        max-height:400px;
+          
+        }
+    }
+  }
+
+  &__main{
+    max-width:1400px;
+    @include flex-center(column, center, end);
+    margin:0 auto;
+    
+    &-container{
+      padding:40px;
+      color:$text-color;
+      width:600px;
+      letter-spacing:-0.6px; 
+      height:100%;
+
+      @media screen and (max-width:700px) {
+        width:100%;
+      }
+
+      & h2{
+        font-size:20px;
+        padding:7px 0;
+        color:$text-color-opacity;
+        @media screen and (max-width:600px) {
+          &{
+            font-size:18px;
+          }
+      }
+    }
+    
+
+      & h1{
+        color:$accent-primary-color;
+
+        @media screen and (max-width:700px) {
+          font-size:30px;
+        }
+      }
+
+      &--play {
+        margin-top:15px;
+
+        a{
+          text-decoration:none;
+          background-color: $background-secondary-color;
+          color:$accent-secondary-color;
+          font-weight:800;
+          font-size:20px;
+          outline:1px solid;
+          padding:5px 10px;
+          border-radius:10px;
+          transition:all $transition-duration ease-in-out;
+          box-shadow: 0 2px 5px rgba(255 255 255 /.6);
+          &:hover{
+            background-color:rgba(0 0 0 /0);
+            color:$accent-secondary-color;
+          }
+        }
+      }
+     
+     
+     
+    }
+  
+  }
+}

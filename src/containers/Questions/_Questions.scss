@@ -1,0 +1,47 @@
+@import "../../config";
+@import "../../components/Question/Question";
+
+.app__questions {
+  background-color: $background-secondary-color;
+  max-height: 650px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+
+  &.on {
+    max-height: 2000px;
+  }
+
+  & h4 {
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    @media screen and (max-width: 700px) {
+      font-size: 30px;
+    }
+  }
+
+  &-seemore {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    background-color: $background-color;
+    background-color: $text-color;
+    box-shadow: 0 0 10px rgba(0 0 0 /0.5);
+    border-radius: 100%;
+    padding: 10px;
+    @include flex-center(column);
+    cursor: pointer;
+    transition: all $transition-duration ease-in-out;
+
+    &:hover {
+      background-color: #afaeaf;
+    }
+
+    &.on {
+      transform: rotate(180deg);
+    }
+  }
+}

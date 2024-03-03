@@ -1,0 +1,137 @@
+@import "../../config";
+
+
+.arrow{
+  position:absolute;
+  height:$features-height;
+  width:10%;
+  max-width:300px;
+  @include flex-center;
+  backdrop-filter: blur(1px);
+  opacity:0;
+  cursor:pointer;
+  background:rgba(0 0 20 /.2);
+  color:$text-color;
+  transition:all 250ms ease-in-out;
+  
+  &:hover{
+    opacity:100%;
+  }
+}
+
+.app__landing__newFeatures{
+  background-color: $background-color;
+  width:$features-width;
+  height:$features-height;
+  background-color:$background-color;
+  @include flex-center(row, center, center);
+  font-family: $primary-font;
+  transition:all .5s ease-in-out;
+
+ 
+  &:hover ~ #featuresForward,
+  &:hover ~ #featuresBack{
+    opacity:100%;
+  }
+
+
+  &-feature{
+    width:85%;
+    padding:10px 100px;
+    height:100%;
+    @include flex-center(row, space-evenly, center);
+    flex:1;
+    gap:10px;
+    position:relative;
+    transition:all .5s ease-in-out;
+    background-color: black;
+
+     
+    &::after{
+      content:"";
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background-image:linear-gradient(to bottom, rgba(0 0 0 /.5), rgba(0 0 0 /.6)), url(src/assets/features/feature.png);
+      // mask-image:radial-gradient(circle, rgba(0 0 0 /.5), rgba(0 0 0 /.5));
+      z-index:1;
+      background-size:auto;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &:hover{
+        background-image:linear-gradient(to bottom, rgba(0 0 0 /.6), rgba(0 0 0 /10)), url(src/assets/features/feature.png);
+      }
+    }
+
+
+    &-text{
+      color:$text-color;
+      @include flex-center(column);
+      letter-spacing:-0.1px;
+       gap:10px;
+       flex:5;
+       z-index:2;
+       font-weight: 700;
+       font-size:24px;
+   
+       @media screen and (max-width: 900px) {
+        font-size: 20px;
+          @media screen and (max-width: 768px) {
+          font-size: 14px;
+
+          @media screen and (max-width: 768px) {
+            font-size: 10px;
+          }
+        }
+      
+      }
+  
+
+  
+    
+      & a{
+        outline:1px solid $accent-secondary-color;
+        padding:8px;
+        border-radius:10px;
+        text-decoration: none;
+        color:$accent-secondary-color;
+        transition:all 250ms ease-in-out;
+        margin:10px 0px;
+        font-size:15px;
+
+        &:hover{
+          color:$accent-primary-color;
+          outline:1px solid;
+        }
+      }
+    }
+  }
+  &-feature:nth-of-type(2){
+    &::after{
+      content:"";
+      position: absolute;
+      background-image:linear-gradient(to bottom, rgba(0 0 0 /.5), rgba(0 0 0 /.6)), url(src/assets/features/feature2.png);
+    }
+  }
+  &-feature:nth-of-type(3){
+    &::after{
+      content:"";
+      position: absolute;
+      background-image:linear-gradient(to bottom, rgba(0 0 0 /.5), rgba(0 0 0 /.6)), url(src/assets/features/feature4.png);
+    }
+  }
+}
+
+#featuresForward{
+  right:0;
+  top:0;
+  z-index:10;
+}
+#featuresBack{
+  top:0;
+  left:0;
+  z-index:10;
+}
