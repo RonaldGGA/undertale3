@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import Feature from './Feature';
-import { ArrowBackIosNewOutlined, ArrowForwardIosOutlined } from '@mui/icons-material';
-import { handleLeftClick, handleRightClick } from '../../functions/exports';
+import { useState, useEffect } from "react";
+import Feature from "./Feature";
+import {
+  ArrowBackIosNewOutlined,
+  ArrowForwardIosOutlined,
+} from "@mui/icons-material";
+import { handleLeftClick, handleRightClick } from "../../functions/exports";
 
 const NewFeaturesBar = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [intervalId, setIntervalId] = useState<number>(0);
-  console.log(currentIndex)
-  console.log(intervalId)
+  console.log(currentIndex);
+  console.log(intervalId);
   const features = 2; // Set the number of new features to show here;
 
   const handleLeft = () => {
@@ -21,7 +24,7 @@ const NewFeaturesBar = () => {
   };
 
   useEffect(() => {
-    const id = setInterval(handleRight, 2000); // Start with handleRight
+    const id: number = setInterval(handleRight, 2000); // Start with handleRight
     setIntervalId(id);
 
     return () => clearInterval(id);
@@ -41,7 +44,6 @@ const NewFeaturesBar = () => {
 
   return (
     <>
-     
       <div className="app__landing__newFeatures">
         <Feature
           title="Get On a New Adventure Experience, we have some new routes for you"
