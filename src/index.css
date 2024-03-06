@@ -142,8 +142,12 @@
   height: 80px;
   padding: 10px 15px;
   z-index: 100;
-  backdrop-filter: blur(1px);
   animation: grow 2s ease-in-out forwards;
+  position: sticky;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(1rem);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 @keyframes grow {
   0% {
@@ -154,13 +158,6 @@
     height: 80px;
     opacity: 1;
   }
-}
-.app__landing__navbar.sticky {
-  position: sticky;
-  top: 0;
-  left: 0;
-  backdrop-filter: blur(1rem);
-  background-color: rgba(0, 0, 0, 0.5);
 }
 .app__landing__navbar__container {
   display: flex;
@@ -695,7 +692,7 @@
   justify-content: start;
   flex-direction: row;
   font-size: 18px;
-  color: hsl(0, 0%, 90%);
+  color: hsl(0, 1%, 90%);
   animation: box-shadow-yellow 3s ease-in-out infinite;
   letter-spacing: 1px;
   font-size: 20px;
@@ -967,6 +964,7 @@
   max-width: 400px;
   width: 100%;
   min-width: 200px;
+  flex: 2;
 }
 .app__footer-img img {
   width: 100%;
@@ -1006,24 +1004,24 @@
   font-size: 20px;
   font-weight: 600;
 }
-.app__footer-bottom {
+.app__footer .app__footer-bottom {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 20px;
 }
-.app__footer .myName {
+.app__footer .app__footer-bottom .myName {
   line-height: 2;
   text-decoration: none;
   font-size: 18px;
   color: hsl(60, 76%, 47%);
   position: relative;
 }
-.app__footer .myName:hover {
+.app__footer .app__footer-bottom .myName:hover {
   opacity: 0.9;
 }
-.app__footer .myName:after {
+.app__footer .app__footer-bottom .myName:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -1033,7 +1031,7 @@
   transition: all 250ms ease-in-out;
   background-color: hsl(60, 76%, 47%);
 }
-.app__footer .myName:hover:after {
+.app__footer .app__footer-bottom .myName:hover:after {
   width: 100%;
 }
 

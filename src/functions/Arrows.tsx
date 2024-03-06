@@ -1,17 +1,25 @@
-const handleLeftClick = (features, currentIndex:number, setCurrentIndex) => {
+const handleLeftClick = (
+  features: number,
+  currentIndex: number,
+  setCurrentIndex: (arg0: number) => void
+) => {
   if (currentIndex > 0) {
     setCurrentIndex(currentIndex - 1);
   } else {
-    setCurrentIndex(features );
+    setCurrentIndex(features);
   }
-}
+};
 
-const handleRightClick = (features, currentIndex, setCurrentIndex) => {
-  if (currentIndex < features  ) {
+const handleRightClick = (
+  features: number,
+  currentIndex: number,
+  setCurrentIndex: (arg0: number) => void
+) => {
+  if (currentIndex < features) {
     setCurrentIndex(currentIndex + 1);
   } else {
     setCurrentIndex(0);
   }
-}
+};
 
-export {handleLeftClick, handleRightClick}
+export { handleLeftClick, handleRightClick };

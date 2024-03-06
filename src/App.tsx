@@ -4,10 +4,9 @@ import { NavBar, NewFeaturesBar } from "./components/exports";
 import Awards from "./containers/Awards/Awards";
 import Questions from "./containers/Questions/Questions";
 import Footer from "./containers/Footer/Footer";
-import NavActive from "./components/NavActive";
 
 // import Carrousel from "./containers/carrousel";
-function App({ active }) {
+function App() {
   //  const images =[story, humor, combat]
   return (
     <div className="app">
