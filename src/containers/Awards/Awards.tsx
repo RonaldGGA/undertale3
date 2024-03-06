@@ -3,8 +3,10 @@ import award from "../../assets/awards4.png";
 import { Comunity } from "../../components/exports";
 const Awards = () => {
   const text = useRef<HTMLDivElement>(null);
-
+  const awards = useRef(null);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
   const [width, setWidth] = useState<number>(0);
+  const [animationCompleted, setAnimationCompleted] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -22,8 +24,33 @@ const Awards = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const options = {
+      once: true,
+      root: null,
+      margin: "0 0 -50% 0",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (
+          entry.isIntersecting &&
+          entry.target === awards.current &&
+          !animationCompleted
+        ) {
+          setIsVisible(true);
+          setAnimationCompleted(true);
+        }
+      });
+    }, options);
+    if (awards.current) {
+      observer.observe(awards.current);
+    }
+    return () => observer.disconnect();
+  }, [isVisible, animationCompleted]);
+
   return (
-    <div className="app__awards">
+    <div ref={awards} className={`app__awards ${isVisible ? "animate" : ""}`}>
       <div className="container">
         <h5 className="app__awards--title">Do you Know?</h5>
         <div ref={text} className="app__awards-info">

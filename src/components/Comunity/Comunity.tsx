@@ -1,7 +1,9 @@
 import React from "react";
 import { Login } from "@mui/icons-material";
-
-const comunity = ({ width }) => {
+interface communityprops {
+  width: number;
+}
+const comunity: React.FC<communityprops> = ({ width }) => {
   return (
     <div className="app__awards-comunity">
       <div className="app__awards-comunity-info">

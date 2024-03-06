@@ -143,6 +143,17 @@
   padding: 10px 15px;
   z-index: 100;
   backdrop-filter: blur(1px);
+  animation: grow 2s ease-in-out forwards;
+}
+@keyframes grow {
+  0% {
+    opacity: 0;
+    height: 0px;
+  }
+  100% {
+    height: 80px;
+    opacity: 1;
+  }
 }
 .app__landing__navbar.sticky {
   position: sticky;
@@ -333,7 +344,7 @@
 
 .app__landing {
   font-family: "Kode Mono", monospace;
-  min-height: 850px;
+  min-height: 750px;
 }
 .app__landing-flex {
   display: flex;
@@ -358,11 +369,23 @@
   flex-direction: row;
 }
 .app__landing_img--img {
-  width: 100%;
+  opacity: 0;
+  width: 80%;
+  animation: scale 1s ease-in-out forwards 1.5s;
+}
+@keyframes scale {
+  0% {
+    transform: scale(0.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 @media screen and (max-width: 900px) {
   .app__landing_img--img {
     max-height: 400px;
+    width: 100%;
   }
 }
 .app__landing__main {
@@ -389,6 +412,21 @@
   font-size: 20px;
   padding: 7px 0;
   color: hsla(0, 0%, 87%, 0.8);
+  opacity: 0;
+  animation: left 1.5s ease-in-out forwards 1s;
+}
+@keyframes left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 @media screen and (max-width: 600px) {
   .app__landing__main-container h2 {
@@ -397,6 +435,20 @@
 }
 .app__landing__main-container h1 {
   color: hsl(60, 76%, 47%);
+  animation: right 1.5s ease-in-out forwards 1s;
+  opacity: 0;
+}
+@keyframes right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @media screen and (max-width: 700px) {
   .app__landing__main-container h1 {
@@ -405,6 +457,16 @@
 }
 .app__landing__main-container--play {
   margin-top: 15px;
+  animation: appear 2s ease-in-out forwards 2.5s;
+  opacity: 0;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .app__landing__main-container--play a {
   text-decoration: none;
@@ -431,6 +493,35 @@
   flex-direction: row;
   padding: 10px;
   gap: 20px;
+  opacity: 0.6;
+}
+.app__gameInfo_container_feature.animate {
+  animation: appear2 1.5s ease-in-out forwards;
+  opacity: 1;
+}
+.app__gameInfo_container_feature.animate:nth-of-type(2) {
+  animation: appear3 1.5s ease-in-out forwards;
+  opacity: 1;
+}
+@keyframes appear2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes appear3 {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 @media screen and (max-width: 700px) {
   .app__gameInfo_container_feature {
@@ -467,6 +558,11 @@
   cursor: pointer;
   text-decoration: none;
   transition: color 250ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 5px;
 }
 .app__gameInfo_container_feature-text a:hover {
   color: hsl(0, 0%, 7%);
@@ -511,7 +607,7 @@
   font-size: 40px;
   padding: 20px 0;
   font-weight: 700;
-  color: hsl(60, 76%, 47%);
+  color: hsl(0, 70%, 46%);
   letter-spacing: 1px;
 }
 @media screen and (max-width: 800px) {
@@ -534,6 +630,20 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  opacity: 0;
+}
+.app__awards.animate {
+  animation: scale 2s ease-in-out forwards;
+}
+@keyframes scale {
+  0% {
+    opacity: 0.1;
+    transform: scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 .app__awards--title {
   text-align: center;
@@ -586,10 +696,21 @@
   flex-direction: row;
   font-size: 18px;
   color: hsl(0, 0%, 90%);
-  box-shadow: 0 5px 10px yellow;
+  animation: box-shadow-yellow 3s ease-in-out infinite;
   letter-spacing: 1px;
   font-size: 20px;
   line-height: 1.4;
+}
+@keyframes box-shadow-yellow {
+  0% {
+    box-shadow: 0 0 1px hsl(60, 76%, 47%);
+  }
+  50% {
+    box-shadow: 0 5px 10px hsl(60, 76%, 47%);
+  }
+  100% {
+    box-shadow: 0 0 1px hsl(60, 76%, 47%);
+  }
 }
 @media screen and (max-width: 800px) {
   .app__awards-comunity {
@@ -833,6 +954,14 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+}
+@media screen and (max-width: 550px) {
+  .app__footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 .app__footer-img {
   max-width: 400px;

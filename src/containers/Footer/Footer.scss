@@ -97,6 +97,10 @@
 
   &-container {
     @include flex-center(row, space-between);
+
+    @media screen and (max-width: 550px) {
+      @include flex-center(column);
+    }
   }
   &-img {
     max-width: 400px;
