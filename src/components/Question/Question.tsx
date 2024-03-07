@@ -1,4 +1,4 @@
-import { useState, FC } from "react";
+import React, { useState, FC } from "react";
 import { ArrowCircleRightTwoTone } from "@mui/icons-material";
 
 interface QuestionProps {

@@ -1,15 +1,28 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
 
 const NavBar = () => {
   const [active, setActive] = useState<boolean>(false);
+  const [scrollY, setScrollY] = useState<number>(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleMenu = () => {
     setActive(!active);
   };
 
   return (
-    <div className={`app__landing__navbar `}>
+    <div className={`app__landing__navbar ${scrollY > 200 ? "sticky" : ""}`}>
       <div className="app__landing__navbar__container">
         <img src={logo} />
         <div

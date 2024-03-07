@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import award from "../../assets/awards4.png";
 import { Comunity } from "../../components/exports";
 const Awards = () => {

@@ -74,7 +74,8 @@
     height: 100px;
     @include flex-center(row, start, center);
     font-size: 18px;
-    color: hsl(0, 1%, 90%);
+    color: hsl(1, 1%, 90%);
+    // animation: outline 4s linear infinite;
     animation: box-shadow-yellow 3s ease-in-out infinite;
     letter-spacing: 1px;
     font-size: 20px;
@@ -101,6 +102,28 @@
         font-weight: 500;
       }
     }
+    // @keyframes outline{
+    //   0%{
+    //     outline: none;
+    //   }
+    //   30%{
+    //     outline:1px solid $accent-primary-color;
+    //   }
+
+    //   40%{
+    //     outline:2px solid $accent-primary-color;
+    //   }
+    //   60%{
+    //     outline:3px solid $accent-primary-color;
+
+    //   }
+    //   80%{
+    //     outline:5px solid $accent-primary-color;
+    //   }
+    //   95%{
+    //     outline:1px solid $accent-primary-color;
+    //   }
+    // }
 
     &-info {
       @include flex-center(row, start, center);
