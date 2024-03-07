@@ -116,7 +116,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="app__footer-bottom">
-          <p>&copy; 2022 Undertale Fan Page. All Rights Reserved.</p>
+          <p>&copy; 2024 Undertale Fan Page. All Rights Reserved.</p>
           <p>
             Designed by{" "}
             <a href="#" className="myName">
