@@ -1,17 +1,20 @@
-import React from 'react';
+import React from "react";
 
+interface featureProps {
+  title: string;
+  currentIndex: number;
+}
 
-
-const Feature:React.FC = ({ title, currentIndex }) => {
-  
+const Feature: React.FC<featureProps> = ({ title, currentIndex }) => {
   return (
-    <div className='app__landing__newFeatures-feature' style={{transform: `translateX(${currentIndex * -100}%)`}}>
-      <div className='app__landing__newFeatures-feature-text'> 
+    <div
+      className="app__landing__newFeatures-feature"
+      style={{ transform: `translateX(${currentIndex * -100}%)` }}>
+      <div className="app__landing__newFeatures-feature-text">
         <p>{title}</p>
         <a href="#">Learn More</a>
       </div>
-      </div>
-    
+    </div>
   );
 };
 

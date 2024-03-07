@@ -6,13 +6,13 @@
   // @include colors(0%, 4, background-color, 1);
   padding: 10px 15px;
   z-index: 100;
-  backdrop-filter: blur(1px);
   animation: grow 2s ease-in-out forwards;
   position: sticky;
   top: 0;
   left: 0;
   backdrop-filter: blur(1rem);
   background-color: rgba(0 0 0 /0.5);
+
   @keyframes grow {
     0% {
       opacity: 0;
