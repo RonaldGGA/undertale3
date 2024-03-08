@@ -92,11 +92,6 @@
     font-size: 14px;
   }
 }
-@media screen and (max-width: 900px) and (max-width: 768px) and (max-width: 768px) {
-  .app__landing__newFeatures-feature-text {
-    font-size: 10px;
-  }
-}
 .app__landing__newFeatures-feature-text a {
   outline: 1px solid hsl(0, 70%, 46%);
   padding: 8px;
@@ -1106,11 +1101,6 @@
     font-size: 14px;
   }
 }
-@media screen and (max-width: 900px) and (max-width: 768px) and (max-width: 768px) {
-  .app__landing__newFeatures-feature-text {
-    font-size: 10px;
-  }
-}
 .app__landing__newFeatures-feature-text a {
   outline: 1px solid hsl(0, 70%, 46%);
   padding: 8px;
@@ -1150,6 +1140,12 @@ body {
   position: relative;
   overflow-x: hidden;
   background-color: black;
+  max-width: 100vw;
+}
+
+.app {
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 .container {
