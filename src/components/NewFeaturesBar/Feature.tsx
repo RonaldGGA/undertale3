@@ -1,7 +1,7 @@
 import React from "react";
-import feature1 from "../../assets/feature/feature1.png";
-import feature2 from "../../assets/feature/feature2.png";
-import feature3 from "../../assets/feature/feature3.png";
+import feature from "../../assets/features/feature.png";
+import feature2 from "../../assets/features/feature2.png";
+import feature3 from "../../assets/features/feature3.png";
 
 interface featureProps {
   title: string;
@@ -21,7 +21,7 @@ const Feature: React.FC<featureProps> = ({ title, currentIndex }) => {
         ),
         url(${
           currentIndex % 3 === 0
-            ? feature1
+            ? feature
             : currentIndex % 3 === 1
             ? feature2
             : feature3
