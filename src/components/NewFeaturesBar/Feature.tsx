@@ -1,7 +1,7 @@
 import React from "react";
 import feature from "../../assets/features/feature.png";
 import feature2 from "../../assets/features/feature2.png";
-import feature3 from "../../assets/features/feature3.png";
+import feature4 from "../../assets/features/feature4.png";
 
 interface featureProps {
   title: string;
@@ -20,11 +20,13 @@ const Feature: React.FC<featureProps> = ({ title, currentIndex }) => {
           rgba(0 0 0 /0.6)
         ),
         url(${
-          currentIndex % 3 === 0
+          currentIndex === 0
             ? feature
-            : currentIndex % 3 === 1
+            : currentIndex === 1
             ? feature2
-            : feature3
+            : currentIndex === 2
+            ? feature4
+            : feature
         })`,
       }}>
       <div className="app__landing__newFeatures-feature-text">
